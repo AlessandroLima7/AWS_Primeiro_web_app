@@ -1,0 +1,29 @@
+{% extends 'template.html' %}
+{% block conteudo %}
+
+
+<table class="table table-striped table-responsive table-bordered">
+    <thead class="thead-default">
+        <th>ID</th>
+        <th>NOME</th>
+        <th>DESRIÇÃO</th>
+        <th>PREÇO</th>
+        <th></th>
+        <th></th>
+    </thead>
+    <tbody>
+        {% for produto in produtos %}
+        <tr>
+            <td>{{ produto.id }}</td>
+            <td>{{ produto.nome}}</td>
+            <td>{{ produto.descricao }}</td>
+            <td>{{ produto.preco }}</td>
+            <td><a href="{{ url_for('editar', id=produto.id)}}">Editar</a></td>
+            <td><a href="{{ url_for('excluir', id=produto.id)}}">Excluir</a></td>
+        </td>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock %}

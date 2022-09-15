@@ -1,0 +1,30 @@
+{% extends 'template.html' %}
+{% block conteudo %}
+
+
+<form action="{{ url_for('confirma_edicao') }}" method="post">
+    <input type="hidden" name="id" value="{{ produto.id }}">
+    <div class="row">
+        <div class="form-group col-md-4 mb-3">
+            <label for="">NOME DO PRODUTO</label>
+            <input type="text" name="nome" value="{{ produto.nome}}" class="form-control" maxlength="35">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="">DESCRIÇÃO</label>
+            <input type="text" name="descricao" value="{{ produto.descricao}}" class="form-control" maxlength="35">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="">PREÇO</label>
+            <input type="text" name="preco" value="{{ produto.preco}}" class="form-control" >
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <input type="submit" class="btn btn-primary" value="CONFIRMAR EDIÇÃO">
+        </div>
+    </div>
+
+</form>
+
+
+{% endblock %}
